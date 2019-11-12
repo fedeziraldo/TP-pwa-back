@@ -1,0 +1,44 @@
+<h1>FORMULARIO DE PRODUCTOS!!!</h1>
+<br><br><br>    
+<form [formGroup]="productForm" (ngSubmit)="altaProducto()"> 
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <div class="form-group">
+            <label for="formGroupExampleInput">Denominación</label>
+            <input type="text" class="form-control" [ngClass]="{error: productForm.get('denominacion').errors && productForm.get('denominacion').dirty}" formControlName="denominacion" id="formGroupExampleInput" placeholder="Denominación">
+            <p *ngIf="productForm.get('denominacion').errors && productForm.get('denominacion').dirty" class="alerta">El campo es obligatorio</p>
+            </div>
+            <div class="form-group">
+            <label for="formGroupExampleInput2">SKU</label>
+            <input type="text" class="form-control" formControlName="sku" id="formGroupExampleInput2" placeholder="SKU">
+            </div>
+            <div class="form-group">
+                    <label for="formGroupExampleInput2">Precio</label>
+                    <input type="text" class="form-control" formControlName="precio" id="formGroupExampleInput2" placeholder="Precio">
+            </div>
+            <div class="form-group">
+                    <label for="formGroupExampleInput2">Precio Oferta</label>
+                    <input type="text" class="form-control" formControlName="precioOferta" id="formGroupExampleInput2" placeholder="Precio Oferta">
+            </div>
+            <div class="form-group">
+                    <label for="formGroupExampleInput2">Descripción</label>
+                    <input type="textarea" class="form-control" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción">
+            </div>
+            <button type="submit" class="btn btn-dark mb-4">GUARDAR</button>
+        </div>
+        <div class="col-4"></div>
+        <div class = "col-12">
+
+            <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+            <!-- button to trigger the file upload when submitted -->
+            <button type="button" class="btn btn-success btn-s"
+            (click)="uploader.uploadAll()" 
+            [disabled]="!uploader.getNotUploadedItems().length">
+            Upload with ng-2 file uploader
+            </button>
+        </div>
+    </div>
+        
+    
+</form>

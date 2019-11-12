@@ -1,0 +1,23 @@
+<h1>LOGIN FORM</h1>
+<br><br><br>    
+<form [formGroup]="loginForm" (ngSubmit)="loginAdmin()"> 
+    {{ usuario }}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <div class="form-group">
+            <label for="formGroupExampleInput">Usuario</label>
+            <input type="text" class="form-control" [ngClass]="{error: loginForm.get('email').errors && loginForm.get('email').dirty}" formControlName="email" id="formGroupExampleInput" placeholder="Email">
+            <p *ngIf="loginForm.get('email').errors && loginForm.get('email').dirty" class="alerta">El campo es obligatorio</p>
+            </div>
+            <div class="form-group">
+            <label for="formGroupExampleInput2">Password</label>
+            <input type="password" class="form-control" [ngClass]="{error: loginForm.get('password').errors && loginForm.get('password').dirty}" formControlName="password" id="formGroupExampleInput2" placeholder="Password">
+            <p *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty" class="alerta">El campo es obligatorio</p>
+            </div>
+            
+            <button type="submit" class="btn btn-dark mb-4">Login</button>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</form>
