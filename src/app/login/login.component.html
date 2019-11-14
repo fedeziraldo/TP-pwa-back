@@ -1,9 +1,20 @@
-<h1>LOGIN FORM</h1>
-<br><br><br>    
+<br/><br/><br/>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+        <div class="form-group alert alert-success">
+            <h4 class="alert-heading">Bienvenido</h4>
+            <p>Por favor, ingrese email y contraseña para ingresar al panel de administraci&oacute;n.</p>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+
 <form [formGroup]="loginForm" (ngSubmit)="loginAdmin()"> 
     {{ usuario }}
     <div class="row">
         <div class="col-4"></div>
+        
         <div class="col-4 text-center">
             <div class="form-group">
             <label for="formGroupExampleInput">Usuario</label>

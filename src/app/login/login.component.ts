@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm;
-  constructor(public fb:FormBuilder, public loginService: LoginService) { 
+  constructor(public fb:FormBuilder, public loginService: LoginService, private router:Router) { 
     this.loginForm=this.fb.group({
       email:["",[Validators.required]],
       password:["",[Validators.required]]
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("token", datos["data"].token)
         localStorage.setItem("usuario", datos["data"].user.nombre)
         this.loginService.authenticante();
+        this.router.navigate(['/listaProductos']);
       }else{
         //Usuario incorrecto
       }

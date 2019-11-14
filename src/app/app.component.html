@@ -11,15 +11,28 @@
       </li>
       <li class="nav-item" >
           <a class="nav-link" routerLink="/listaProductos">Lista Productos</a>
-        </li>
-      <li *ngIf="!logueado()" class="nav-item">
-        <a class="nav-link" routerLink="/login">Login</a>
       </li>
-      <li *ngIf="logueado()" class="nav-item">
-        <a class="nav-link" (click)="logout()">Logout</a>
+      <li class="nav-item d-block d-sm-none" >
+          <a *ngIf="!logueado()" class="nav-link" routerLink="/login">Iniciar sesi&oacute;n</a>
       </li>
-      <li *ngIf="logueado()" class="nav-item">
-        <p >Hola {{usuario}}</p>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse"> 
+    <ul class="navbar-nav ml-auto nav-flex-icons" style="cursor:pointer">
+      <li class="nav-item" *ngIf="logueado()">
+        <a class="nav-link">Hola {{usuario}}</a>
+      </li>
+     <li class="nav-item avatar dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <img src="../assets/images/avatar.png" class="rounded-circle z-depth-0"
+            alt="avatar image">
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink-55">
+          <a *ngIf="!logueado()" class="dropdown-item" routerLink="/login">Iniciar sesi&oacute;n</a>
+          <a *ngIf="logueado()" class="dropdown-item" href="#">Cerrar sesi&oacute;n</a>
+        </div>
       </li>
     </ul>
   </div>
