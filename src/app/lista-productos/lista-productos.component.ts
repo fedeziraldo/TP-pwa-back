@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-lista-productos',
@@ -9,6 +10,7 @@ import { ProductosService } from '../productos.service';
 export class ListaProductosComponent implements OnInit {
 
   productos;
+  faPlus = faPlus;
   constructor(public productosService: ProductosService) { }
 
 

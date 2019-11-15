@@ -11,6 +11,7 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 import { InterceptorService } from './interceptors.service';
 import { FileSelectDirective } from 'ng2-file-upload';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FileSelectDirective } from 'ng2-file-upload';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
