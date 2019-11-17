@@ -12,12 +12,13 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
+  getAdmins() {
+    return this.http.get("http://localhost:3000/admin/users")
+  }
+
   registrar(loginForm) {
     return this.http.post("http://localhost:3000/autentication/registrar", {
-      email: loginForm.email,
-      password: loginForm.password,
-      nombre: loginForm.nombre,
-      apellido: loginForm.apellido
+      loginForm
     });
   }
 
@@ -33,15 +34,6 @@ export class LoginService {
     if(token){
       this.authenticationState.next(true);
     }
-  }
- 
-  login(loginForm) {
-    console.log("Usuario entre",loginForm.email,loginForm.password)
-    return this.http.post("http://localhost:3000/autentication/loginAdmin", {
-      email: loginForm.email,
-      password: loginForm.password
-    });
-
   }
  
   logout() {

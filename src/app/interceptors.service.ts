@@ -34,6 +34,10 @@ export class InterceptorService implements HttpInterceptor {
             if (err.status === 401) {
               this.router.navigateByUrl('/login');
             }
+
+            if (err.status === 400) {
+              this.router.navigate(['/login'], { queryParams: { loginError: true}, });
+            }
     
             return throwError( err );
     

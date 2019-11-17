@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,13 +10,20 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   loginForm;
-  constructor(public fb:FormBuilder, public loginService: LoginService, private router:Router) { 
+  loginError = false;
+  constructor(public fb:FormBuilder, public loginService: LoginService, private router:Router, private route: ActivatedRoute) { 
     this.loginForm=this.fb.group({
       email:["",[Validators.required]],
       password:["",[Validators.required]]
     })
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+      if (params.loginError){
+        this.loginError = true;
+      }
+    });
   }
-
+  
   registrar() {
     this.loginService.registrar(this.loginForm.value).subscribe( datos => { 
       console.log(datos) 

@@ -12,6 +12,8 @@ import { ListaProductosComponent } from './lista-productos/lista-productos.compo
 import { InterceptorService } from './interceptors.service';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListaLoginComponent } from './lista-login/lista-login.component';
+import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductosComponent,
     DetalleProductoComponent,
     ListaProductosComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    ListaLoginComponent,
+    ListaCategoriasComponent
   ],
   imports: [
     BrowserModule,
