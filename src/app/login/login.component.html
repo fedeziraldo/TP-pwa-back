@@ -28,8 +28,8 @@
             
             <button type="submit" class="btn btn-dark mb-4">Login</button>
 
-            <div *ngIf="this.loginError" class="form-group">
-                Error: usuario o clave incorrectos
+            <div *ngIf="this.loginError" class="col-12 alert alert-danger" role="alert">
+                ¡Atenci&oacute;n! El usuario y/o contraseña ingresado no es correcto.
             </div>
         </div>
         <div class="col-4"></div>
