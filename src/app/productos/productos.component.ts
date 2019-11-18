@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductosService } from '../productos.service';
-
-import {  FileUploader } from 'ng2-file-upload';
-
-const URL = 'http://localhost:3000/upload';
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-productos',
@@ -12,14 +9,8 @@ const URL = 'http://localhost:3000/upload';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  public uploader:FileUploader = new FileUploader({
-      url: URL, 
-      itemAlias: 'photo',
-      authTokenHeader: "x-access-token",
-      authToken:localStorage.getItem("token"),
-    });
   productForm;
-  constructor(public fb:FormBuilder, public productosService: ProductosService) { 
+  constructor(public fb:FormBuilder, public productosService: ProductosService, private router:Router) { 
     this.productForm=this.fb.group({
       denominacion:["",[Validators.required]],
       sku:["",[Validators.required]],
@@ -31,7 +22,10 @@ export class ProductosComponent implements OnInit {
 
   altaProducto() {
     this.productosService.altaProducto(this.productForm.value).subscribe( datos => { 
-      console.log(datos)
+      console.log("envia id = " + datos["data"]._id);
+      var id = datos["data"]._id;
+      //this.router.navigate(['/imagen_producto']);
+      this.router.navigate(['/imagen_producto?' + id], { queryParams: { "id": datos["data"]._id } });
     })
   }
 
@@ -40,13 +34,6 @@ export class ProductosComponent implements OnInit {
   }
   
   ngOnInit() {
-    //override the onAfterAddingfile property of the uploader so it doesn't authenticate with //credentials.
-    this.uploader.onAfterAddingFile = (file)=> { file.withCredentials = false; };
-    //overide the onCompleteItem property of the uploader so we are 
-    //able to deal with the server response.
-    this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
-         console.log("ImageUpload:uploaded:", item, status, response);
-     };
   }
 
 }

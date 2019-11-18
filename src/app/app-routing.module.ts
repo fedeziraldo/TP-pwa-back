@@ -6,14 +6,15 @@ import { ListaProductosComponent } from './lista-productos/lista-productos.compo
 import { AuthGuard } from './auth.guard';
 import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
 import { ListaLoginComponent } from './lista-login/lista-login.component';
-
+import { ImagenProductoComponent } from './imagen-producto/imagen-producto.component';
 
 const routes: Routes = [
   {path:"login", component: LoginComponent},
   {path:"productos", canActivate:[AuthGuard], component: ProductosComponent},
   {path:"listaProductos", canActivate:[AuthGuard], component: ListaProductosComponent},
   {path:"listaCategorias", canActivate:[AuthGuard], component: ListaCategoriasComponent},
-  {path:"listaAdmins", canActivate:[AuthGuard], component: ListaLoginComponent}
+  {path:"listaAdmins", canActivate:[AuthGuard], component: ListaLoginComponent},
+  {path:"imagen_producto/:id", canActivate:[AuthGuard], component: ImagenProductoComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

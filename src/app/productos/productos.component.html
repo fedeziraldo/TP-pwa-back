@@ -1,5 +1,14 @@
-<h1>FORMULARIO DE PRODUCTOS!!!</h1>
-<br><br><br>    
+<br/>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 text-center">
+        <div class="form-group alert alert-success">
+            <p>Por favor, complete los datos para ingresar un nuevo producto.</p>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+
 <form [formGroup]="productForm" (ngSubmit)="altaProducto()"> 
     <div class="row">
         <div class="col-4"></div>
@@ -28,17 +37,5 @@
             <button type="submit" class="btn btn-dark mb-4">GUARDAR</button>
         </div>
         <div class="col-4"></div>
-        <div class = "col-12">
-
-            <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-            <!-- button to trigger the file upload when submitted -->
-            <button type="button" class="btn btn-success btn-s"
-            (click)="uploader.uploadAll()" 
-            [disabled]="!uploader.getNotUploadedItems().length">
-            Upload with ng-2 file uploader
-            </button>
-        </div>
     </div>
-        
-    
 </form>

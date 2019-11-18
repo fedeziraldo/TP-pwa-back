@@ -1,0 +1,25 @@
+<br/><br/><br/>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+        <div class="form-group alert alert-success">
+            <p>¡El producto fue dado de alta correctamente!</p>
+            <p>Ingrese la imagen del producto.</p>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class = "col-6">
+        <br/>
+        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+        <!-- button to trigger the file upload when submitted -->
+        <button type="button" class="btn btn-success btn-s"
+        (click)="uploader.uploadAll()" 
+        [disabled]="!uploader.getNotUploadedItems().length">
+        Seleccione
+        </button>
+    </div>
+</div>

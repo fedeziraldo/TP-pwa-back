@@ -1,9 +1,32 @@
-<br><div class="float-right">
+<br>
+<div class="float-right">
     <div class="row">
-    <div class="container">
-        <button type="button" tooltip="Agregar producto" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
-    </div></div>
+        <div class="container">
+            <button type="button" routerLink="/productos"tooltip="Agregar producto" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
+        </div>
+        <div class="col-2"></div>
+    </div>
 </div>
-<div *ngFor="let producto of productos">
-    <app-detalle-producto [product]="producto"></app-detalle-producto>
-</div>
+
+<div class="container">
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">SKU</th>
+                <th scope="col">Denominaci&oacute;n</th>
+                <th scope="col">Descripci&oacute;n</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Oferta</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let producto of productos">
+            <tr>
+                <!-- <app-detalle-producto [product]="producto"></app-detalle-producto> -->
+                <th scope="row">{{producto.sku}}</th>
+                <td>{{producto.denominacion}}</td>
+                <td>{{producto.descripcion}}</td>
+                <td>$ {{producto.precio}}</td>
+                <td>$ {{producto.precioOferta}}</td>
+            </tr>
+        </tbody>
+</table></div>

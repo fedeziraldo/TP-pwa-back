@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login.service';
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { LoginService } from './login.service';
 export class AppComponent {
   title = 'Backoffice ecommerce';
   usuario = ''
-  constructor(public loginService: LoginService) {
+  constructor(public loginService: LoginService, private router:Router) {
     
   }
 
@@ -23,5 +24,12 @@ export class AppComponent {
       return true
     }
     return false
+  }
+  
+  ngOnInit() {
+    if (this.logueado())
+      this.router.navigate(['/listaProductos']);
+    else
+    this.router.navigate(['/login']);
   }
 }

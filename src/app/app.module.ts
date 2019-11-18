@@ -14,6 +14,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListaLoginComponent } from './lista-login/lista-login.component';
 import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
+import { ImagenProductoComponent } from './imagen-producto/imagen-producto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.co
     ListaProductosComponent,
     FileSelectDirective,
     ListaLoginComponent,
-    ListaCategoriasComponent
+    ListaCategoriasComponent,
+    ImagenProductoComponent
   ],
   imports: [
     BrowserModule,
