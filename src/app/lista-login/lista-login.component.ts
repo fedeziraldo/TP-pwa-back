@@ -12,7 +12,6 @@ export class ListaLoginComponent implements OnInit {
 
   loginForm;
   admins;
-
   faPlus = faPlus;
   constructor(public fb:FormBuilder, public loginService: LoginService) {
     this.loginForm=this.fb.group({
