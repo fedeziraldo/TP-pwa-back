@@ -18,9 +18,8 @@
         </thead>
         <tbody *ngFor="let categoria of categorias">
             <tr>
-                <!-- <app-detalle-producto [product]="producto"></app-detalle-producto> -->
                 <th scope="row">{{categoria.nombre}}</th>
-                <td>{{categoria.padre}}</td>
+                <td>{{categoria.padre ? categoria.padre.nombre : ""}}</td>
             </tr>
         </tbody>
 </table></div>

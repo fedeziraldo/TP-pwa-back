@@ -14,9 +14,9 @@ export class ListaCategoriasComponent implements OnInit {
   constructor(public categoriasService: CategoriasService) { }
 
   getCategorias() {
-    this.categoriasService.getProductos().subscribe( datos => { 
+    this.categoriasService.getCategorias().subscribe( datos => { 
       console.log(datos)
-      this.categorias = datos["data"].docs;
+      this.categorias = datos["data"];
     })
   }
 

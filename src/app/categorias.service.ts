@@ -8,7 +8,7 @@ export class CategoriasService {
 
   constructor(private http: HttpClient) { }
 
-  getProductos() {
+  getCategorias() {
     return this.http.get("http://localhost:3000/admin/categorias")
   }
 
