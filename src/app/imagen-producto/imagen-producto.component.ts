@@ -26,14 +26,18 @@ export class ImagenProductoComponent implements OnInit {
     this.route.queryParams
       .subscribe(params => {
         this.prod_id = params['id'].toString();
+        this.uploader.setOptions({url: URL + "/" + this.prod_id});
         console.log("llega =" + this.prod_id)
       })
+      
     //override the onAfterAddingfile property of the uploader so it doesn't authenticate with //credentials.
     this.uploader.onAfterAddingFile = (file)=> { file.withCredentials = false; };
+    
     //overide the onCompleteItem property of the uploader so we are 
     //able to deal with the server response.
     this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
          console.log("ImageUpload:uploaded:", item, status, response);
+         
      };
   }
 

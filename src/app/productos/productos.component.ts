@@ -30,7 +30,7 @@ export class ProductosComponent implements OnInit {
       console.log("envia id = " + datos["data"]._id);
       var id = datos["data"]._id;
       //this.router.navigate(['/imagen_producto']);
-      this.router.navigate(['/imagen_producto?' + id], { queryParams: { "id": datos["data"]._id } });
+      this.router.navigate(['/imagen_producto/' + id], { queryParams: { "id": datos["data"]._id } });
     })
   }
 
