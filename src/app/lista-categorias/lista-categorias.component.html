@@ -1,9 +1,26 @@
-<br><div class="float-right">
-        <div class="row">
+<br>
+<div class="float-right">
+    <div class="row">
         <div class="container">
-            <button type="button" tooltip="Agregar producto" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
-        </div></div>
+            <button type="button" routerLink="/categoria" tooltip="Agregar categoria" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
+        </div>
+        <div class="col-2"></div>
     </div>
-    <div *ngFor="let categoria of categorias">
-        {{categoria | json}}
-    </div>
+</div>
+
+<div class="container">
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cat. padre</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let categoria of categorias">
+            <tr>
+                <!-- <app-detalle-producto [product]="producto"></app-detalle-producto> -->
+                <th scope="row">{{categoria.nombre}}</th>
+                <td>{{categoria.padre}}</td>
+            </tr>
+        </tbody>
+</table></div>

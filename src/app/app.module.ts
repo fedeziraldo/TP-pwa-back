@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListaLoginComponent } from './lista-login/lista-login.component';
 import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
 import { ImagenProductoComponent } from './imagen-producto/imagen-producto.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ImagenProductoComponent } from './imagen-producto/imagen-producto.compo
     FileSelectDirective,
     ListaLoginComponent,
     ListaCategoriasComponent,
-    ImagenProductoComponent
+    ImagenProductoComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
