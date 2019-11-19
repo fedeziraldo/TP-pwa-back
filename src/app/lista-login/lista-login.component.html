@@ -2,7 +2,7 @@
 <div class="float-right">
     <div class="row">
         <div class="container">
-            <button type="button" routerLink="/categoria" tooltip="Agregar usuario" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
+            <button type="button" routerLink="/admins" tooltip="Agregar usuario" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
         </div>
         <div class="col-2"></div>
     </div>
@@ -20,8 +20,8 @@
         <tbody *ngFor="let admin of admins">
             <tr>
                 <!-- <app-detalle-producto [product]="producto"></app-detalle-producto> -->
-                <th scope="row">{{admin.name}}</th>
-                <td>{{admin.lastname}}</td>
+                <th scope="row">{{admin.nombre}}</th>
+                <td>{{admin.apellido}}</td>
                 <td>{{admin.email}}</td>
             </tr>
         </tbody>

@@ -16,6 +16,7 @@ import { ListaLoginComponent } from './lista-login/lista-login.component';
 import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
 import { ImagenProductoComponent } from './imagen-producto/imagen-producto.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { AdminsComponent } from './admins/admins.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
     ListaLoginComponent,
     ListaCategoriasComponent,
     ImagenProductoComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    AdminsComponent
   ],
   imports: [
     BrowserModule,
