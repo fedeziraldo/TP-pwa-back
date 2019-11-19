@@ -17,6 +17,9 @@
                 <th scope="col">Descripci&oacute;n</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Oferta</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Im&aacute;genes</th>
             </tr>
         </thead>
         <tbody *ngFor="let producto of productos">
@@ -27,6 +30,11 @@
                 <td>{{producto.descripcion}}</td>
                 <td>{{producto.precio | currency}}</td>
                 <td>{{producto.precioOferta | currency}}</td>
+                <td>{{producto.stock}}</td>
+                <td>{{producto.categoria ? producto.categoria.nombre : ""}}</td>
+                <td><ul>
+                    <li *ngFor="let imagen of producto.imagenes"><a href="imagen">{{imagen}}</a></li>
+                </ul></td>
             </tr>
         </tbody>
 </table>

@@ -23,16 +23,26 @@
             <input type="text" class="form-control" formControlName="sku" id="formGroupExampleInput2" placeholder="SKU">
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput2">Precio</label>
-                    <input type="text" class="form-control" formControlName="precio" id="formGroupExampleInput2" placeholder="Precio">
+                    <label for="formGroupExampleInput3">Precio</label>
+                    <input type="number" class="form-control" formControlName="precio" id="formGroupExampleInput3" placeholder="Precio">
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput2">Precio Oferta</label>
-                    <input type="text" class="form-control" formControlName="precioOferta" id="formGroupExampleInput2" placeholder="Precio Oferta">
+                    <label for="formGroupExampleInput4">Precio Oferta</label>
+                    <input type="number" class="form-control" formControlName="precioOferta" id="formGroupExampleInput4" placeholder="Precio Oferta">
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput2">Descripción</label>
-                    <input type="textarea" class="form-control" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción">
+                    <label for="formGroupExampleInput5">Descripción</label>
+                    <input type="textarea" class="form-control" formControlName="descripcion" id="formGroupExampleInput5" placeholder="Descripción">
+            </div>
+            <div class="form-group">
+                    <label for="formGroupExampleInput6">Stock</label>
+                    <input type="number" class="form-control" formControlName="stock" id="formGroupExampleInput6" placeholder="Stock">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput7">Categoria</label>
+                <select class="form-control" formControlName="categoria" id="formGroupExampleInput7">
+                    <option *ngFor="let categoria of categorias" [value]="categoria._id" >{{categoria.nombre}}</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-dark mb-4">GUARDAR</button>
         </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductosService } from '../productos.service';
 import {Router, ActivatedRoute} from "@angular/router";
+import { CategoriasService } from '../categorias.service';
 
 @Component({
   selector: 'app-productos',
@@ -10,13 +11,17 @@ import {Router, ActivatedRoute} from "@angular/router";
 })
 export class ProductosComponent implements OnInit {
   productForm;
-  constructor(public fb:FormBuilder, public productosService: ProductosService, private router:Router) { 
+  categorias;
+  constructor(public fb:FormBuilder, public productosService: ProductosService,
+     private router:Router, private categoriasService: CategoriasService) { 
     this.productForm=this.fb.group({
       denominacion:["",[Validators.required]],
       sku:["",[Validators.required]],
       precio:["",[Validators.required]],
       precioOferta:["",[Validators.required]],
-      descripcion:["",[Validators.required]]
+      descripcion:["",[Validators.required]],
+      stock:["",[Validators.required]],
+      categoria:["",[Validators.required]]
     })
   }
 
@@ -34,6 +39,10 @@ export class ProductosComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.categoriasService.getCategorias().subscribe( datos => { 
+      console.log(datos);
+      this.categorias = datos["data"];
+    })
   }
 
 }
