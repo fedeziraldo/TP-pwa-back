@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-lista-login',
@@ -11,7 +12,7 @@ export class ListaLoginComponent implements OnInit {
 
   loginForm;
   admins;
-
+  faPlus = faPlus;
   constructor(public fb:FormBuilder, public loginService: LoginService) {
     this.loginForm=this.fb.group({
       email:["",[Validators.required]],
