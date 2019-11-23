@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriasService } from '../categorias.service';
 import { Validators, FormBuilder } from '@angular/forms';
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-categoria',
@@ -12,7 +13,7 @@ export class CategoriaComponent implements OnInit {
   categorias = [{_id: 12321, nombre: "pp"}];
   categoriaForm;
 
-  constructor(public fb:FormBuilder, private categoriasService: CategoriasService) {
+  constructor(public fb:FormBuilder, private categoriasService: CategoriasService, private router: Router) {
     this.categoriaForm=this.fb.group({
       nombre:["",[Validators.required]],
       padre:["",[Validators.required]],
@@ -22,6 +23,7 @@ export class CategoriaComponent implements OnInit {
   altaCategoria() {
     this.categoriasService.altaCategoria(this.categoriaForm.value).subscribe( datos => { 
       console.log(datos);
+      this.router.navigate(['/listaCategorias']);
     })
   }
   

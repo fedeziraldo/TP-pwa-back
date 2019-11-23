@@ -14,12 +14,14 @@
         <div class="col-4"></div>
         <div class="col-4 text-center">
             <div class="form-group">
-            <label for="formGroupExampleInput">Nombre</label>
-            <input type="text" class="form-control" [ngClass]="{error: categoriaForm.get('nombre').errors && categoriaForm.get('nombre').dirty}" formControlName="nombre" id="formGroupExampleInput" placeholder="Nombre">
-            <p *ngIf="categoriaForm.get('nombre').errors && categoriaForm.get('nombre').dirty" class="alerta">El campo es obligatorio</p>
+                <label for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" [ngClass]="{error: categoriaForm.get('nombre').errors && categoriaForm.get('nombre').dirty}" formControlName="nombre" id="formGroupExampleInput" placeholder="Nombre">
+                <small *ngIf="categoriaForm.get('nombre').errors && categoriaForm.get('nombre').dirty" class="text-danger">
+                    Debe ingresar el nombre.
+                </small>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Cat. Padre</label>
+            <label for="formGroupExampleInput2">Categor&iacute;a Padre</label>
             <select class="form-control" formControlName="padre" id="formGroupExampleInput2">
                 <option *ngFor="let categoria of categorias" [value]="categoria._id" >{{categoria.nombre}}</option>
             </select>

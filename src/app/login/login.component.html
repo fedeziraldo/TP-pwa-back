@@ -16,20 +16,24 @@
         
         <div class="col-4 text-center">
             <div class="form-group">
-            <label for="formGroupExampleInput">Usuario</label>
-            <input type="text" class="form-control" [ngClass]="{error: loginForm.get('email').errors && loginForm.get('email').dirty}" formControlName="email" id="formGroupExampleInput" placeholder="Email">
-            <p *ngIf="loginForm.get('email').errors && loginForm.get('email').dirty" class="alerta">El campo es obligatorio</p>
-            </div>
+                <label for="formGroupExampleInput">Usuario</label>
+                <input type="text" class="form-control" [ngClass]="{invalid: loginForm.get('email').errors && loginForm.get('email').dirty}" formControlName="email" id="formGroupExampleInput" placeholder="Email">
+                <small *ngIf="loginForm.get('email').errors && loginForm.get('email').dirty" class="text-danger">
+                        Debe ingresar el usuario.
+                </small>
+                </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Password</label>
-            <input type="password" class="form-control" [ngClass]="{error: loginForm.get('password').errors && loginForm.get('password').dirty}" formControlName="password" id="formGroupExampleInput2" placeholder="Password">
-            <p *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty" class="alerta">El campo es obligatorio</p>
+                <label for="formGroupExampleInput2">Contraseña</label>
+                <input type="password" class="form-control" [ngClass]="{invalid: loginForm.get('password').errors && loginForm.get('password').dirty}" formControlName="password" id="formGroupExampleInput2" placeholder="Password">
+                <small id="passwordHelp" *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty" class="text-danger">
+                    Debe ingresar la contraseña.
+                </small>
             </div>
             
-            <button type="submit" class="btn btn-dark mb-4">Login</button>
+            <button type="submit" class="btn btn-dark mb-4">Iniciar sesi&oacute;n</button>
 
             <div *ngIf="this.loginError" class="col-12 alert alert-danger" role="alert">
-                ¡Atenci&oacute;n! El usuario y/o contraseña ingresado no es correcto.
+                {{errorMessage}}
             </div>
         </div>
         <div class="col-4"></div>

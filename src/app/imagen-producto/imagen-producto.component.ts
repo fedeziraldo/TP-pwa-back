@@ -27,7 +27,6 @@ export class ImagenProductoComponent implements OnInit {
       .subscribe(params => {
         this.prod_id = params['id'].toString();
         this.uploader.setOptions({url: URL + "/" + this.prod_id});
-        console.log("llega =" + this.prod_id)
       })
       
     //override the onAfterAddingfile property of the uploader so it doesn't authenticate with //credentials.

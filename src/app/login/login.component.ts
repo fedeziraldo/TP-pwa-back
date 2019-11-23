@@ -11,6 +11,10 @@ import {Router, ActivatedRoute} from "@angular/router";
 export class LoginComponent implements OnInit {
   loginForm;
   loginError = false;
+  serverError = false;
+  errorMessage = '';
+  invalid;
+  
   constructor(public fb:FormBuilder, public loginService: LoginService, private router:Router, private route: ActivatedRoute) { 
     this.loginForm=this.fb.group({
       email:["",[Validators.required]],
@@ -20,6 +24,7 @@ export class LoginComponent implements OnInit {
       console.log(params);
       if (params.loginError){
         this.loginError = true;
+        this.errorMessage = '¡Atención! El usuario y/o contraseña ingresado no es correcto.'
       }
     });
   }
@@ -31,17 +36,30 @@ export class LoginComponent implements OnInit {
   }
   
   loginAdmin() {
-    this.loginService.loginAdmin(this.loginForm.value).subscribe( datos => { 
-      if(datos["data"] && datos["data"].token){
-        console.log(datos["data"].token) 
-        localStorage.setItem("token", datos["data"].token)
-        localStorage.setItem("usuario", datos["data"].user.nombre)
-        this.loginService.authenticante();
-        this.router.navigate(['/listaProductos']);
-      }else{
-        //Usuario incorrecto
+    if (this.loginForm.value.email.length == 0){
+      this.loginError = true;
+      this.errorMessage = '¡Atención! Debe ingresar el usuario';
+      this.invalid = "invalid"
+    } else {
+      if (this.loginForm.value.password.length == 0) {
+        this.loginError = true;
+        this.errorMessage = '¡Atención! Debe ingresar la contraseña';
+        this.invalid = "invalid"
+      } else {
+        this.loginService.loginAdmin(this.loginForm.value).subscribe( datos => { 
+          if(datos["data"] && datos["data"].token){
+            console.log(datos["data"].token) 
+            localStorage.setItem("token", datos["data"].token)
+            localStorage.setItem("usuario", datos["data"].user.nombre)
+            this.loginService.authenticante();
+            this.router.navigate(['/listaProductos']);
+          }else{
+            //Usuario incorrecto
+            
+          }
+        })
       }
-    })
+    }
   }
 
   
