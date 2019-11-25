@@ -17,6 +17,9 @@ import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.co
 import { ImagenProductoComponent } from './imagen-producto/imagen-producto.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { AdminsComponent } from './admins/admins.component';
+import { ListaComprasComponent } from './lista-compras/lista-compras.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
+import { NuestraHistoriaComponent } from './nuestra-historia/nuestra-historia.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { AdminsComponent } from './admins/admins.component';
     ListaCategoriasComponent,
     ImagenProductoComponent,
     CategoriaComponent,
-    AdminsComponent
+    AdminsComponent,
+    ListaComprasComponent,
+    QuienesSomosComponent,
+    NuestraHistoriaComponent
   ],
   imports: [
     BrowserModule,

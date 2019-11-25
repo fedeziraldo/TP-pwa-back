@@ -1,1 +1,65 @@
-<p>admins works!</p>
+<br/><br/><br/>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+        <div class="form-group alert alert-success">
+            <h4 class="alert-heading">Bienvenido</h4>
+            <p>Por favor, complete los ddatos para ingresar un nuevo administrador.</p>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<form [formGroup]="adminForm" (ngSubmit)="altaAdmin()"> 
+    <div class="row">
+        <div class="col-4"></div>
+        
+        <div class="col-4 text-center">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" [ngClass]="{invalid: adminForm.get('nombre').errors && adminForm.get('nombre').dirty}" formControlName="nombre" id="formGroupExampleInput" placeholder="Nombre">
+                <small *ngIf="adminForm.get('nombre').errors && adminForm.get('nombre').dirty" class="text-danger">
+                        Debe ingresar el nombre.
+                </small>
+                </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Apellido</label>
+                <input type="text" class="form-control" [ngClass]="{invalid: adminForm.get('apellido').errors && adminForm.get('apellido').dirty}" formControlName="apellido" id="formGroupExampleInput2" placeholder="Apellido">
+                <small id="passwordHelp" *ngIf="adminForm.get('apellido').errors && adminForm.get('apellido').dirty" class="text-danger">
+                    Debe ingresar el apellido.
+                </small>
+            </div>
+            
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Correo electr&oacute;nico</label>
+                <input type="text" class="form-control" [ngClass]="{invalid: adminForm.get('email').errors && adminForm.get('email').dirty}" formControlName="email" id="formGroupExampleInput2" placeholder="Correo electrónico">
+                <small id="passwordHelp" *ngIf="adminForm.get('email').errors && adminForm.get('email').dirty" class="text-danger">
+                    Debe ingresar el correo electr&oacute;nico.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Contraseña</label>
+                <input type="password" class="form-control" [ngClass]="{invalid: (adminForm.get('password').errors && adminForm.get('password').dirty)  || passDontMatch}" formControlName="password" id="formGroupExampleInput2" placeholder="Contraseña">
+                <small id="passwordHelp" *ngIf="adminForm.get('password').errors && adminForm.get('password').dirty" class="text-danger">
+                    Debe ingresar la contraseña.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Repetir Contraseña</label>
+                <input type="password" class="form-control" [ngClass]="{invalid: (adminForm.get('password2').errors && adminForm.get('password2').dirty) || passDontMatch}" formControlName="password2" id="formGroupExampleInput2" placeholder="Repetir Contraseña">
+                <small id="passwordHelp" *ngIf="adminForm.get('password2').errors && adminForm.get('password2').dirty" class="text-danger">
+                    Debe repetir la contraseña.
+                </small>
+            </div>
+
+            <button type="submit" class="btn btn-dark mb-4">Confirmar</button>
+
+            <div *ngIf="this.adminError" class="col-12 alert alert-danger" role="alert">
+                {{errorMessage}}
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</form>

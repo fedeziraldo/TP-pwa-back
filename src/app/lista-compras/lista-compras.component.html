@@ -1,0 +1,30 @@
+<div class="container">
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Denominaci&oacute;n</th>
+                <th scope="col">Descripci&oacute;n</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Oferta</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let compra of compras">
+            <!--<tr>
+                <th>{{compra.fecha}}</th>
+                <th>{{compra.usuario}}</th>
+                <th>{{compra.sku}}</th>
+                <td>{{compra.denominacion}}</td>
+                <td>{{compra.descripcion}}</td>
+                <td>{{compra.precio | currency}}</td>
+                <td>{{compra.precioOferta | currency}}</td>
+                <td>{{compra.cantidad}}</td>
+            </tr>
+            -->
+            {{compra | json}}
+        </tbody>
+</table>
+</div>
