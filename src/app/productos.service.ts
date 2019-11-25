@@ -8,8 +8,8 @@ export class ProductosService {
 
   constructor(private http: HttpClient) { }
 
-  getProductos() {
-    return this.http.get("http://localhost:3000/productos")
+  getProductos(httpParams) {
+    return this.http.get("http://localhost:3000/productos", {params: httpParams})
   }
 
   altaProducto(productosForm) {

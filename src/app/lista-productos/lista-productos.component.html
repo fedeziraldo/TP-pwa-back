@@ -9,13 +9,21 @@
 </div>
 
 <div class="container">
+    <input [(ngModel)]="denominacion" placeholder="denominacion"/>
+    <input [(ngModel)]="sku" placeholder="sku"/>
+    <input type="number" [(ngModel)]="precioMin" placeholder="precioMin"/>
+    <input type="number" [(ngModel)]="precioMax" placeholder="precioMax"/>
+    <button (click)="buscar()">Buscar</button>
+</div>
+
+<div class="container">
 <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">SKU</th>
-                <th scope="col">Denominaci&oacute;n</th>
+                <th scope="col" (click)="ordenar('sku')">SKU</th>
+                <th scope="col" (click)="ordenar('denominacion')">Denominaci&oacute;n</th>
                 <th scope="col">Descripci&oacute;n</th>
-                <th scope="col">Precio</th>
+                <th scope="col" (click)="ordenar('precio')">Precio</th>
                 <th scope="col">Oferta</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Categoria</th>
@@ -38,4 +46,10 @@
             </tr>
         </tbody>
 </table>
+
+<div>
+    <button *ngIf="this.prevPage" (click)="paginar(this.prevPage)">{{this.prevPage}}</button>
+    P&aacute;gina: {{this.page}}
+    <button *ngIf="this.nextPage" (click)="paginar(this.nextPage)">{{this.nextPage}}</button>
+</div>
 </div>

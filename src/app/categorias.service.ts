@@ -8,8 +8,8 @@ export class CategoriasService {
 
   constructor(private http: HttpClient) { }
 
-  getCategorias() {
-    return this.http.get("http://localhost:3000/admin/categorias")
+  getCategorias(httpParams) {
+    return this.http.get("http://localhost:3000/admin/categorias", {params: httpParams})
   }
 
   altaCategoria(categoriasForm) {

@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ProductosService } from '../productos.service';
 import {Router, ActivatedRoute} from "@angular/router";
 import { CategoriasService } from '../categorias.service';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-productos',
@@ -39,9 +40,9 @@ export class ProductosComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.categoriasService.getCategorias().subscribe( datos => { 
+    this.categoriasService.getCategorias(new HttpParams()).subscribe( datos => { 
       console.log(datos);
-      this.categorias = datos["data"];
+      this.categorias = datos["data"].docs;
     })
   }
 
