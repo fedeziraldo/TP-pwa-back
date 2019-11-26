@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpParams } from '@angular/common/http';
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-lista-productos',
@@ -22,7 +23,7 @@ export class ListaProductosComponent implements OnInit {
 
   productos;
   faPlus = faPlus;
-  constructor(public productosService: ProductosService) { }
+  constructor(public productosService: ProductosService, private router: Router) { }
 
 
   getProductos() {
@@ -89,6 +90,10 @@ export class ListaProductosComponent implements OnInit {
       this.page = datos["data"].page;
       this.prevPage = datos["data"].prevPage;
     })
+  }
+
+  detalleProducto(product_id){
+    this.router.navigate(['/detalleproducto/'+ product_id], { queryParams: { "id": product_id } });
   }
 
 }

@@ -2,7 +2,7 @@
 <div class="float-right">
     <div class="row">
         <div class="container">
-            <button type="button" routerLink="/productos"tooltip="Agregar producto" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
+            <button type="button" routerLink="/productos" tooltip="Agregar producto" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
         </div>
         <div class="col-2"></div>
     </div>
@@ -20,6 +20,7 @@
 <table class="table table-striped">
         <thead>
             <tr>
+                <th scope="col"></th>
                 <th scope="col" (click)="ordenar('sku')">SKU</th>
                 <th scope="col" (click)="ordenar('denominacion')">Denominaci&oacute;n</th>
                 <th scope="col">Descripci&oacute;n</th>
@@ -33,6 +34,7 @@
         <tbody *ngFor="let producto of productos">
             <tr>
                 <!-- <app-detalle-producto [product]="producto"></app-detalle-producto> -->
+                <th scope="row" (click)="detalleProducto(producto._id)">+</th>
                 <th scope="row">{{producto.sku}}</th>
                 <td>{{producto.denominacion}}</td>
                 <td>{{producto.descripcion}}</td>

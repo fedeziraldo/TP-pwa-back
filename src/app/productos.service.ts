@@ -15,4 +15,8 @@ export class ProductosService {
   altaProducto(productosForm) {
     return this.http.post("http://localhost:3000/admin/productos", productosForm)
   }
+
+  getProducto(product_id) {
+    return this.http.get("http://localhost:3000/productos/" + product_id)
+  }
 }

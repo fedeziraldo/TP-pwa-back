@@ -12,10 +12,12 @@ import { AdminsComponent } from './admins/admins.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { NuestraHistoriaComponent } from './nuestra-historia/nuestra-historia.component'
 import { ListaComprasComponent } from './lista-compras/lista-compras.component';
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 
 const routes: Routes = [
   {path:"login", component: LoginComponent},
   {path:"productos", canActivate:[AuthGuard], component: ProductosComponent},
+  {path:"detalleproducto/:id", canActivate:[AuthGuard], component: DetalleProductoComponent},
   {path:"listaProductos", canActivate:[AuthGuard], component: ListaProductosComponent},
   {path:"listaCategorias", canActivate:[AuthGuard], component: ListaCategoriasComponent},
   {path:"listaCompras", canActivate:[AuthGuard], component: ListaComprasComponent},
