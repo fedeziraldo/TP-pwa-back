@@ -14,35 +14,49 @@
         <div class="col-4"></div>
         <div class="col-4 text-center">
             <div class="form-group">
-            <label for="formGroupExampleInput">Denominación</label>
-            <input type="text" class="form-control" [ngClass]="{error: productForm.get('denominacion').errors && productForm.get('denominacion').dirty}" formControlName="denominacion" id="formGroupExampleInput" placeholder="Denominación">
-            <p *ngIf="productForm.get('denominacion').errors && productForm.get('denominacion').dirty" class="alerta">El campo es obligatorio</p>
+                <label for="formGroupExampleInput">Denominación</label>
+                <input type="text" class="form-control" [ngClass]="{invalid: productForm.get('denominacion').errors && productForm.get('denominacion').dirty}" formControlName="denominacion" id="formGroupExampleInput" placeholder="Denominación">
+                <small id="passwordHelp" *ngIf="productForm.get('denominacion').errors && productForm.get('denominacion').dirty" class="text-danger">
+                    Debe ingresar la denominación.
+                </small>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">SKU</label>
-            <input type="text" class="form-control" formControlName="sku" id="formGroupExampleInput2" placeholder="SKU">
+                <label for="formGroupExampleInput2">SKU</label>
+                <input type="text" class="form-control" formControlName="sku" [ngClass]="{invalid: productForm.get('sku').errors && productForm.get('sku').dirty}" formControlName="sku" id="formGroupExampleInput2" placeholder="SKU">
+                <small id="passwordHelp" *ngIf="productForm.get('sku').errors && productForm.get('sku').dirty" class="text-danger">
+                    Debe ingresar el código SKU.
+                </small>
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput3">Precio</label>
-                    <input type="number" class="form-control" formControlName="precio" id="formGroupExampleInput3" placeholder="Precio">
+                <label for="formGroupExampleInput3">Precio</label>
+                <input type="number" class="form-control" [ngClass]="{invalid: productForm.get('precio').errors && productForm.get('precio').dirty}" formControlName="precio" id="formGroupExampleInput3" placeholder="Precio">
+                <small id="passwordHelp" *ngIf="productForm.get('precio').errors && productForm.get('precio').dirty" class="text-danger">
+                    Debe ingresar el precio.
+                </small>
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput4">Precio Oferta</label>
-                    <input type="number" class="form-control" formControlName="precioOferta" id="formGroupExampleInput4" placeholder="Precio Oferta">
+                <label for="formGroupExampleInput4">Precio Oferta</label>
+                <input type="number" class="form-control" formControlName="precioOferta" id="formGroupExampleInput4" placeholder="Precio Oferta">
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput5">Descripción</label>
-                    <input type="textarea" class="form-control" formControlName="descripcion" id="formGroupExampleInput5" placeholder="Descripción">
+                <label for="formGroupExampleInput5">Descripción</label>
+                <input type="textarea" class="form-control" formControlName="descripcion" id="formGroupExampleInput5" placeholder="Descripción">
             </div>
             <div class="form-group">
-                    <label for="formGroupExampleInput6">Stock</label>
-                    <input type="number" class="form-control" formControlName="stock" id="formGroupExampleInput6" placeholder="Stock">
+                <label for="formGroupExampleInput6">Stock</label>
+                <input type="number" class="form-control" [ngClass]="{invalid: productForm.get('stock').errors && productForm.get('stock').dirty}" formControlName="stock" id="formGroupExampleInput6" placeholder="Stock">
+                <small id="passwordHelp" *ngIf="productForm.get('stock').errors && productForm.get('stock').dirty" class="text-danger">
+                    Debe ingresar el stock.
+                </small>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput7">Categoria</label>
-                <select class="form-control" formControlName="categoria" id="formGroupExampleInput7">
+                <label for="formGroupExampleInput7">Categor&iacute;a</label>
+                <select class="form-control" [ngClass]="{invalid: productForm.get('categoria').errors && productForm.get('categoria').dirty}" formControlName="categoria" id="formGroupExampleInput7">
                     <option *ngFor="let categoria of categorias" [value]="categoria._id" >{{categoria.nombre}}</option>
                 </select>
+                <small id="passwordHelp" *ngIf="productForm.get('categoria').errors && productForm.get('categoria').dirty" class="text-danger">
+                    Debe ingresar una categoria.
+                </small>
             </div>
             <button type="submit" class="btn btn-dark mb-4">GUARDAR</button>
         </div>

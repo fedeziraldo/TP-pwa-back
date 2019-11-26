@@ -19,8 +19,6 @@ export class ProductosComponent implements OnInit {
       denominacion:["",[Validators.required]],
       sku:["",[Validators.required]],
       precio:["",[Validators.required]],
-      precioOferta:["",[Validators.required]],
-      descripcion:["",[Validators.required]],
       stock:["",[Validators.required]],
       categoria:["",[Validators.required]]
     })
