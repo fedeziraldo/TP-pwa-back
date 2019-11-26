@@ -34,7 +34,7 @@
         <tbody *ngFor="let producto of productos">
             <tr>
                 <!-- <app-detalle-producto [product]="producto"></app-detalle-producto> -->
-                <th scope="row" (click)="detalleProducto(producto._id)">+</th>
+                <th style="cursor:pointer" scope="row" (click)="detalleProducto(producto._id)"><fa-icon [icon]="faPlus"></fa-icon></th>
                 <th scope="row">{{producto.sku}}</th>
                 <td>{{producto.denominacion}}</td>
                 <td>{{producto.descripcion}}</td>

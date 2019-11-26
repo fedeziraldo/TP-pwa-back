@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { HttpParams } from '@angular/common/http';
 import {Router, ActivatedRoute} from "@angular/router";
 
@@ -23,6 +23,7 @@ export class ListaProductosComponent implements OnInit {
 
   productos;
   faPlus = faPlus;
+  faSearch = faSearch;
   constructor(public productosService: ProductosService, private router: Router) { }
 
 
