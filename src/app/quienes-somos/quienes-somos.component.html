@@ -23,7 +23,7 @@
                 </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Descripci&oacute;n</label>
-                <input type="textarea" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: quienesForm.get('descripcion').errors && quienesForm.get('descripcion').dirty}" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción">
+                <textarea type="text" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: quienesForm.get('descripcion').errors && quienesForm.get('descripcion').dirty}" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción"></textarea>
                 <small id="passwordHelp" *ngIf="quienesForm.get('descripcion').errors && quienesForm.get('descripcion').dirty" class="text-danger">
                     Debe ingresar la descripción.
                 </small>
