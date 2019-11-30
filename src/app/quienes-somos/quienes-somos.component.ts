@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { QuienesSomosService } from '../quienes-somos.service';
+import { QuienesSomosService } from '../services/quienes-somos.service';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute, Router } from '@angular/router';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductosService } from '../productos.service';
+import { ProductosService } from '../services/productos.service';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { HttpParams } from '@angular/common/http';
 import {Router, ActivatedRoute} from "@angular/router";

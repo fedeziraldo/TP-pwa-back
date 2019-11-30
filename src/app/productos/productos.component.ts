@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ProductosService } from '../productos.service';
+import { ProductosService } from '../services/productos.service';
 import {Router, ActivatedRoute} from "@angular/router";
-import { CategoriasService } from '../categorias.service';
+import { CategoriasService } from '../services/categorias.service';
 import { HttpParams } from '@angular/common/http';
 
 @Component({

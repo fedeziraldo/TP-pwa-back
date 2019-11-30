@@ -9,7 +9,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
-import { InterceptorService } from './interceptors.service';
+import { InterceptorService } from './services/interceptors.service';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListaLoginComponent } from './lista-login/lista-login.component';

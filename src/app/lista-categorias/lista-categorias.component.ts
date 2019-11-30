@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriasService } from '../categorias.service';
+import { CategoriasService } from '../services/categorias.service';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpParams } from '@angular/common/http';
 
