@@ -13,6 +13,6 @@ export class QuienesSomosService {
   };
 
   saveQuienesSomos(quienesForm) {
-    return this.http.post("http://localhost:3000/admin/productos", quienesForm);
+    return this.http.post("http://localhost:3000/admin/quienes", quienesForm);
   };
 }

@@ -2,7 +2,7 @@
 <div class="float-right">
     <div class="row">
         <div class="container">
-            <button type="button" routerLink="/categoria" tooltip="Modificar datos" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPlus"></fa-icon></i></button>
+            <button type="button" routerLink="/quienesSomos/UPD" tooltip="Modificar datos" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPencilAlt"></fa-icon></i></button>
         </div>
         <div class="col-2"></div>
     </div>
@@ -16,29 +16,29 @@
         <div class="col-4 text-center">
             <div class="form-group">
                 <label for="formGroupExampleInput">T&iacute;tulo</label>
-                <input type="text" class="form-control" [ngClass]="{invalid: quienesForm.get('titulo').errors && quienesForm.get('titulo').dirty}" formControlName="titulo" id="formGroupExampleInput" placeholder="Título">
+                <input type="text" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: quienesForm.get('titulo').errors && quienesForm.get('titulo').dirty}" formControlName="titulo" id="formGroupExampleInput" placeholder="Título">
                 <small *ngIf="quienesForm.get('titulo').errors && quienesForm.get('titulo').dirty" class="text-danger">
                         Debe ingresar el título.
                 </small>
                 </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Descripci&oacute;n</label>
-                <input type="textarea" class="form-control" [ngClass]="{invalid: quienesForm.get('descripcion').errors && quienesForm.get('descripcion').dirty}" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción">
+                <input type="textarea" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: quienesForm.get('descripcion').errors && quienesForm.get('descripcion').dirty}" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción">
                 <small id="passwordHelp" *ngIf="quienesForm.get('descripcion').errors && quienesForm.get('descripcion').dirty" class="text-danger">
                     Debe ingresar la descripción.
                 </small>
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Contacto</label>
-                <input type="text" class="form-control" [ngClass]="{invalid: quienesForm.get('contacto').errors && quienesForm.get('contacto').dirty}" formControlName="contacto" id="formGroupExampleInput2" placeholder="Contacto">
+                <input type="text" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: quienesForm.get('contacto').errors && quienesForm.get('contacto').dirty}" formControlName="contacto" id="formGroupExampleInput2" placeholder="Contacto">
                 <small id="passwordHelp" *ngIf="quienesForm.get('contacto').errors && quienesForm.get('contacto').dirty" class="text-danger">
                     Debe ingresar el contacto.
                 </small>
             </div>
 
-            <button type="submit" class="btn btn-dark mb-4">Confirmar</button>
+            <button *ngIf="!isDisabled" type="submit" class="btn btn-dark mb-4">Confirmar</button>
 
-            <div *ngIf="this.loginError" class="col-12 alert alert-danger" role="alert">
+            <div *ngIf="this.quienesError" class="col-12 alert alert-danger" role="alert">
                 {{errorMessage}}
             </div>
         </div>

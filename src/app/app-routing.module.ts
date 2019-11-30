@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:"imagen_producto/:id", canActivate:[AuthGuard], component: ImagenProductoComponent, pathMatch: 'full'},
   {path:"categoria", canActivate:[AuthGuard], component: CategoriaComponent},
   {path:"admins", canActivate:[AuthGuard], component: AdminsComponent},
-  {path:"quienesSomos", canActivate:[AuthGuard], component: QuienesSomosComponent},
+  {path:"quienesSomos/:mode", canActivate:[AuthGuard], component: QuienesSomosComponent},
   {path:"nuestraHistoria", canActivate:[AuthGuard], component: NuestraHistoriaComponent}
 ];
 
