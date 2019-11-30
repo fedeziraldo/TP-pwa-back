@@ -8,5 +8,11 @@ export class NuestraHistoriaService {
 
   constructor(private http: HttpClient) { }
 
-  //ToDo: agregar servicios contra la API
+  getHistoria() {
+    return this.http.get("http://localhost:3000/admin/historia");
+  };
+
+  saveHistoria(historiaForm) {
+    return this.http.post("http://localhost:3000/admin/historia", historiaForm);
+  };
 }

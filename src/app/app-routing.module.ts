@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:"categoria", canActivate:[AuthGuard], component: CategoriaComponent},
   {path:"admins", canActivate:[AuthGuard], component: AdminsComponent},
   {path:"quienesSomos/:mode", canActivate:[AuthGuard], component: QuienesSomosComponent},
-  {path:"nuestraHistoria", canActivate:[AuthGuard], component: NuestraHistoriaComponent}
+  {path:"historia/:mode", canActivate:[AuthGuard], component: NuestraHistoriaComponent}
 ];
 
 @NgModule({

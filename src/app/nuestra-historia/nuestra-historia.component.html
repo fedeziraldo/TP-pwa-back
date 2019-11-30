@@ -1,1 +1,41 @@
-<p>nuestra-historia works!</p>
+<br>
+<div class="float-right">
+    <div class="row">
+        <div class="container">
+            <button type="button" routerLink="/historia/UPD" tooltip="Modificar datos" class="btn btn-info btn-circle btn-lg"><i><fa-icon [icon]="faPencilAlt"></fa-icon></i></button>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<div class="container">
+<form [formGroup]="historiaForm" (ngSubmit)="saveHistoria()"> 
+    <div class="row">
+        <div class="col-4"></div>
+        
+        <div class="col-4 text-center">
+            <div class="form-group">
+                <label for="formGroupExampleInput">T&iacute;tulo</label>
+                <input type="text" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: historiaForm.get('titulo').errors && historiaForm.get('titulo').dirty}" formControlName="titulo" id="formGroupExampleInput" placeholder="Título">
+                <small *ngIf="historiaForm.get('titulo').errors && historiaForm.get('titulo').dirty" class="text-danger">
+                        Debe ingresar el título.
+                </small>
+                </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Descripci&oacute;n</label>
+                <textarea type="text" [readonly]="isDisabled" class="form-control" [ngClass]="{invalid: historiaForm.get('descripcion').errors && historiaForm.get('descripcion').dirty}" formControlName="descripcion" id="formGroupExampleInput2" placeholder="Descripción"></textarea>
+                <small id="passwordHelp" *ngIf="historiaForm.get('descripcion').errors && historiaForm.get('descripcion').dirty" class="text-danger">
+                    Debe ingresar la descripción.
+                </small>
+            </div>
+
+            <button *ngIf="!isDisabled" type="submit" class="btn btn-dark mb-4">Confirmar</button>
+
+            <div *ngIf="this.historiaError" class="col-12 alert alert-danger" role="alert">
+                {{errorMessage}}
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</form>
+</div>
