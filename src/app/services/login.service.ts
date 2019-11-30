@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  getAdmins() {
+  getUsers() {
     return this.http.get("http://localhost:3000/admin/users")
   }
 

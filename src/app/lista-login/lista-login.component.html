@@ -15,6 +15,8 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Email</th>
+                <th scope="col">Activo</th>
+                <th scope="col">Admin</th>
             </tr>
         </thead>
         <tbody *ngFor="let admin of admins">
@@ -23,6 +25,8 @@
                 <th scope="row">{{admin.nombre}}</th>
                 <td>{{admin.apellido}}</td>
                 <td>{{admin.email}}</td>
+                <td>{{admin.activo ? "SI" : "NO"}}</td>
+                <td>{{admin.admin ? "SI" : "NO"}}</td>
             </tr>
         </tbody>
 </table></div>

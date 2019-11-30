@@ -10,20 +10,14 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class ListaLoginComponent implements OnInit {
 
-  loginForm;
   admins;
   faPlus = faPlus;
-  constructor(public fb:FormBuilder, public loginService: LoginService) {
-    this.loginForm=this.fb.group({
-      email:["",[Validators.required]],
-      password:["",[Validators.required]],
-      nombre:["",[Validators.required]],
-      apellido:["",[Validators.required]]
-    })
-   }
+  constructor(public loginService: LoginService){
+    
+  }
 
   ngOnInit() {
-    this.loginService.getAdmins().subscribe( datos => { 
+    this.loginService.getUsers().subscribe( datos => { 
       console.log(datos)
       this.admins = datos["data"];
     })
