@@ -23,4 +23,10 @@ export class ProductosService {
   eliminar(product_id) {
     return this.http.delete("http://localhost:3000/admin/productos/" + product_id)
   }
+
+  desasociarImagen(product_id, path) {
+    return this.http.post("http://localhost:3000/admin/productos/desasociarImagen/" + product_id, {
+      path
+    })
+  }
 }

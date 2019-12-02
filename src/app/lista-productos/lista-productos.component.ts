@@ -112,4 +112,11 @@ export class ListaProductosComponent implements OnInit {
     })
   }
 
+  desasociarImagen(prodId, path) {
+    if (!confirm("¿Desea eliminar esta imagen?")) return
+    this.productosService.desasociarImagen(prodId, path).subscribe(datos => {
+      console.log(datos)
+      this.getProductos();
+    })
+  }
 }

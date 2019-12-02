@@ -45,7 +45,10 @@
                 <td>{{producto.stock}}</td>
                 <td>{{producto.categoria ? producto.categoria.nombre : ""}}</td>
                 <td><ul>
-                    <li *ngFor="let imagen of producto.imagenes"><a href="imagen">{{imagen}}</a></li>
+                    <li *ngFor="let imagen of producto.imagenes">
+                        <a href="imagen">{{imagen}}</a>
+                        <button (click)="desasociarImagen(producto._id, imagen)">X</button>
+                    </li>
                 </ul></td>
                 <td>{{producto.destacado ? "SI" : "NO"}}</td>
                 <td><button (click)="eliminar(producto._id)">X</button></td>
