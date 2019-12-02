@@ -19,4 +19,8 @@ export class ProductosService {
   getProducto(product_id) {
     return this.http.get("http://localhost:3000/productos/" + product_id)
   }
+
+  eliminar(product_id) {
+    return this.http.delete("http://localhost:3000/admin/productos/" + product_id)
+  }
 }

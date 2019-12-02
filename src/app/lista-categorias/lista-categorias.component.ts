@@ -34,4 +34,11 @@ export class ListaCategoriasComponent implements OnInit {
     })
   }
 
+  eliminar(id) {
+    this.categoriasService.eliminar(id).subscribe(datos => {
+      console.log(datos)
+      this.getCategorias();
+    })
+  }
+
 }

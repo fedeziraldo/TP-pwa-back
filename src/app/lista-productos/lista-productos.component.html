@@ -30,6 +30,7 @@
                 <th scope="col">Categoria</th>
                 <th scope="col">Im&aacute;genes</th>
                 <th scope="col">Destacado</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody *ngFor="let producto of productos">
@@ -47,6 +48,7 @@
                     <li *ngFor="let imagen of producto.imagenes"><a href="imagen">{{imagen}}</a></li>
                 </ul></td>
                 <td>{{producto.destacado ? "SI" : "NO"}}</td>
+                <td><button (click)="eliminar(producto._id)">X</button></td>
             </tr>
         </tbody>
 </table>

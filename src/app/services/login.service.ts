@@ -28,6 +28,10 @@ export class LoginService {
     );
   }
 
+  eliminar(user_id) {
+    return this.http.delete("http://localhost:3000/admin/users/" + user_id)
+  }
+
   checkToken() {
     console.log("check")
     let token = localStorage.getItem(TOKEN_KEY);

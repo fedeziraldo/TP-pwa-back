@@ -18,7 +18,7 @@ export class ListaProductosComponent implements OnInit {
   orden = "";
 
   nextPage;
-  page;
+  page = "1";
   prevPage;
 
   productos;
@@ -28,6 +28,13 @@ export class ListaProductosComponent implements OnInit {
 
 
   getProductos() {
+    let httpParams = new HttpParams()
+      .set("denominacion", this.denominacion)
+      .set("sku", this.sku)
+      .set("precioMin", this.precioMin)
+      .set("precioMax", this.precioMax)
+      .set("page", this.page)
+      .set("sort", this.orden);
     this.productosService.getProductos(new HttpParams()).subscribe(datos => {
       console.log(datos)
       this.productos = datos["data"].docs;
@@ -95,6 +102,13 @@ export class ListaProductosComponent implements OnInit {
 
   detalleProducto(product_id){
     this.router.navigate(['/detalleproducto/'+ product_id], { queryParams: { "id": product_id } });
+  }
+
+  eliminar(id) {
+    this.productosService.eliminar(id).subscribe(datos => {
+      console.log(datos)
+      this.getProductos();
+    })
   }
 
 }

@@ -15,4 +15,8 @@ export class CategoriasService {
   altaCategoria(categoriasForm) {
     return this.http.post("http://localhost:3000/admin/categorias", categoriasForm)
   }
+
+  eliminar(cat_id) {
+    return this.http.delete("http://localhost:3000/admin/categorias/" + cat_id)
+  }
 }

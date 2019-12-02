@@ -17,9 +17,20 @@ export class ListaLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  getUsers() {
     this.loginService.getUsers().subscribe( datos => { 
       console.log(datos)
-      this.admins = datos["data"];
+      this.admins = datos["data"].docs;
+    })
+  }
+
+  eliminar(id) {
+    this.loginService.eliminar(id).subscribe(datos => {
+      console.log(datos)
+      this.getUsers();
     })
   }
 

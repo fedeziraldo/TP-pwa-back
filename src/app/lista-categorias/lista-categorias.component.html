@@ -17,12 +17,14 @@
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Categor&iacute;a padre</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody *ngFor="let categoria of categorias">
             <tr>
                 <th scope="row">{{categoria.nombre}}</th>
                 <td>{{categoria.padre ? categoria.padre.nombre : ""}}</td>
+                <td><button (click)="eliminar(categoria._id)">X</button></td>
             </tr>
         </tbody>
 </table></div>
