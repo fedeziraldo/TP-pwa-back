@@ -105,6 +105,7 @@ export class ListaProductosComponent implements OnInit {
   }
 
   eliminar(id) {
+    if (!confirm("¿Desea eliminar este producto?")) return
     this.productosService.eliminar(id).subscribe(datos => {
       console.log(datos)
       this.getProductos();

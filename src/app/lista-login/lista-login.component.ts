@@ -28,6 +28,7 @@ export class ListaLoginComponent implements OnInit {
   }
 
   eliminar(id) {
+    if (!confirm("¿Desea eliminar este usuario?")) return
     this.loginService.eliminar(id).subscribe(datos => {
       console.log(datos)
       this.getUsers();

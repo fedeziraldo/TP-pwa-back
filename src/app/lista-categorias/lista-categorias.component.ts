@@ -35,6 +35,7 @@ export class ListaCategoriasComponent implements OnInit {
   }
 
   eliminar(id) {
+    if (!confirm("¿Desea eliminar esta Categoria?")) return
     this.categoriasService.eliminar(id).subscribe(datos => {
       console.log(datos)
       this.getCategorias();
