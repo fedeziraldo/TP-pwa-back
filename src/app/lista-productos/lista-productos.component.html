@@ -46,7 +46,7 @@
                 <td>{{producto.categoria ? producto.categoria.nombre : ""}}</td>
                 <td><ul>
                     <li *ngFor="let imagen of producto.imagenes">
-                        <a href="imagen">{{imagen}}</a>
+                        <a [href]="imagen">{{imagen}}</a>
                         <button (click)="desasociarImagen(producto._id, imagen)">X</button>
                     </li>
                 </ul></td>
