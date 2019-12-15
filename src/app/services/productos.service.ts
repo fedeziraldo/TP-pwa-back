@@ -16,6 +16,10 @@ export class ProductosService {
     return this.http.post("http://localhost:3000/admin/productos", productosForm)
   }
 
+  modificaProducto(productId, productosForm) {
+    return this.http.put("http://localhost:3000/admin/productos/" + productId, productosForm)
+  }
+
   getProducto(product_id) {
     return this.http.get("http://localhost:3000/productos/" + product_id)
   }
