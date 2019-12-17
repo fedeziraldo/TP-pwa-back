@@ -3,28 +3,30 @@
         <thead>
             <tr>
                 <th scope="col">Fecha</th>
-                <th scope="col">Usuario</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Denominaci&oacute;n</th>
                 <th scope="col">Descripci&oacute;n</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Oferta</th>
                 <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+                <th scope="col">Forma Pago</th>
+                <th scope="col">Estado</th>
             </tr>
         </thead>
         <tbody *ngFor="let compra of compras">
-            <!--<tr>
+            <tr>
                 <th>{{compra.fecha}}</th>
-                <th>{{compra.usuario}}</th>
-                <th>{{compra.sku}}</th>
-                <td>{{compra.denominacion}}</td>
-                <td>{{compra.descripcion}}</td>
-                <td>{{compra.precio | currency}}</td>
-                <td>{{compra.precioOferta | currency}}</td>
+                <th>{{compra.producto.sku}}</th>
+                <td>{{compra.producto.denominacion}}</td>
+                <td>{{compra.producto.descripcion}}</td>
+                <td>{{compra.producto.precio | currency}}</td>
+                <td>{{compra.producto.precioOferta | currency}}</td>
                 <td>{{compra.cantidad}}</td>
+                <td>{{compra.aPagar}}</td>
+                <td>{{compra.forma_pago}}</td>
+                <td>{{compra.estadoPago}}</td>
             </tr>
-            -->
-            {{compra | json}}
         </tbody>
 </table>
 </div>
