@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th scope="col">Fecha</th>
+                <th scope="col">Usuario</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Denominaci&oacute;n</th>
                 <th scope="col">Descripci&oacute;n</th>
@@ -17,6 +18,7 @@
         <tbody *ngFor="let compra of compras">
             <tr>
                 <th>{{compra.fecha}}</th>
+                <td>{{compra.usuario ? compra.usuario.email : ""}}</td>
                 <th>{{compra.producto.sku}}</th>
                 <td>{{compra.producto.denominacion}}</td>
                 <td>{{compra.producto.descripcion}}</td>
